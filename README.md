@@ -11,5 +11,6 @@ This is an anonymous repo created for paper review.
   2. Click on the latest workflow run
   3. Go to the "Artifacts" tab below to download the built binaries and test results
      - The test results are shown in the `release_note.md` and SVG files inside the downloaded zip file
+     - Note: GitHub requires login to download the artifacts
   4. Click on the job on the left "Jobs" panel to view the build log
      - Note: GitHub requires login to view the build log
