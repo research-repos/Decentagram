@@ -77,7 +77,7 @@ contract EventManager {
 
     function notifyOnChainSubscribers(bytes memory data) private {
         // 1. Get gas price (Wei per gas unit) that we want to reimburse
-        uint256 gasPriceWei = tx.gasprice;
+        uint256 gasPriceWei = tx.gasprice == 0 ? 1 : tx.gasprice;
 
         // 2. maintain running track of how much to compensate tx.origin
         uint256 compensateWei = 0;

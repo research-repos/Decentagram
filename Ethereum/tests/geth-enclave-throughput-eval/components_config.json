@@ -37,7 +37,7 @@
 	},
 	"Geth": {
 		"Protocol": "http",
-		"Host": "localhost",
+		"Host": "172.17.0.1",
 		"Port": 8546
 	}
 }

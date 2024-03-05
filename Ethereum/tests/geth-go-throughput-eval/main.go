@@ -16,7 +16,7 @@ import (
 )
 
 const (
-	COMPONENT_CONFIG_PATH = "../geth-decent-throughput-eval/components_config.json"
+	COMPONENT_CONFIG_PATH = "../geth-enclave-throughput-eval/components_config.json"
 	START_BLOCK           = 8875000
 	END_BLOCK             = 8880000
 )

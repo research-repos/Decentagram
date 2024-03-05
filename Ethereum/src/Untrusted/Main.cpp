@@ -188,7 +188,7 @@ int main(int argc, char* argv[])
 
 	// Heartbeat emitter
 	auto heartbeatEmitter = std::unique_ptr<Hosting::HeartbeatEmitterService>(
-		new Hosting::HeartbeatEmitterService(enclave, 2000)
+		new Hosting::HeartbeatEmitterService(enclave, 100)
 	);
 	threadPool->AddTask(std::move(heartbeatEmitter));
 

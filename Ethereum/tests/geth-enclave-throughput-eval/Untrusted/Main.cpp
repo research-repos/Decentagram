@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
 	std::string configPath;
 	if (argc == 1)
 	{
-		configPath = "../../../tests/geth-decent-throughput-eval/components_config.json";
+		configPath = "../../../tests/geth-enclave-throughput-eval/components_config.json";
 	}
 	else if (argc == 2)
 	{

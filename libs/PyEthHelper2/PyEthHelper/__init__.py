@@ -1,8 +1,9 @@
-# Copyright (c) 2023 Decentagram
+#!/usr/bin/env python3
+# -*- coding:utf-8 -*-
+###
+# Copyright (c) 2023 PyEthHelper
 # Use of this source code is governed by an MIT-style
 # license that can be found in the LICENSE file or at
 # https://opensource.org/licenses/MIT.
+###
 
-
-add_subdirectory(ProblematicApp)
-add_subdirectory(End2EndLatency)

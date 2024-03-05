@@ -164,7 +164,7 @@ public: // static members:
 		auto itBegin = rlpBytes.begin();
 		auto itEnd = rlpBytes.end();
 		size_t size = rlpBytes.size();
-		if (firstByte == 0x01 || firstByte == 0x02)
+		if (firstByte == 0x01 || firstByte == 0x02 || firstByte == 0x03)
 		{
 			++itBegin;
 			--size;

@@ -73,7 +73,13 @@ using EthHeaderTupleCore = std::tuple<
 	std::pair<Obj::StrKey<SIMOBJ_KSTR("WithdrawalsHash")>,
 		_BytesObjType>,
 	// 18.
-	std::pair<Obj::StrKey<SIMOBJ_KSTR("ExcessDataGas")>,
+	std::pair<Obj::StrKey<SIMOBJ_KSTR("BlobGasUsed")>,
+		_BytesObjType>,
+	// 19.
+	std::pair<Obj::StrKey<SIMOBJ_KSTR("ExcessBlobGas")>,
+		_BytesObjType>,
+	// 20.
+	std::pair<Obj::StrKey<SIMOBJ_KSTR("ParentBeaconRoot")>,
 		_BytesObjType>
 	>;
 
@@ -131,7 +137,13 @@ using EthHeaderParserTupleCore = std::tuple<
 	std::pair<Obj::StrKey<SIMOBJ_KSTR("WithdrawalsHash")>,
 		_BytesParserType>,
 	// 18.
-	std::pair<Obj::StrKey<SIMOBJ_KSTR("ExcessDataGas")>,
+	std::pair<Obj::StrKey<SIMOBJ_KSTR("BlobGasUsed")>,
+		_BytesParserType>,
+	// 19.
+	std::pair<Obj::StrKey<SIMOBJ_KSTR("ExcessBlobGas")>,
+		_BytesParserType>,
+	// 20.
+	std::pair<Obj::StrKey<SIMOBJ_KSTR("ParentBeaconRoot")>,
 		_BytesParserType>
 	>;
 
@@ -374,17 +386,43 @@ public:
 		return Base::template get<Internal::Obj::StrKey<SIMOBJ_KSTR("WithdrawalsHash")> >();
 	}
 
-	// 18. ExcessDataGas
-	typename Base::template GetRef<Internal::Obj::StrKey<SIMOBJ_KSTR("ExcessDataGas")> >
-	get_ExcessDataGas()
+	// 18. BlobGasUsed
+	typename Base::template GetRef<Internal::Obj::StrKey<SIMOBJ_KSTR("BlobGasUsed")> >
+	get_BlobGasUsed()
 	{
-		return Base::template get<Internal::Obj::StrKey<SIMOBJ_KSTR("ExcessDataGas")> >();
+		return Base::template get<Internal::Obj::StrKey<SIMOBJ_KSTR("BlobGasUsed")> >();
 	}
 
-	typename Base::template GetConstRef<Internal::Obj::StrKey<SIMOBJ_KSTR("ExcessDataGas")> >
-	get_ExcessDataGas() const
+	typename Base::template GetConstRef<Internal::Obj::StrKey<SIMOBJ_KSTR("BlobGasUsed")> >
+	get_BlobGasUsed() const
 	{
-		return Base::template get<Internal::Obj::StrKey<SIMOBJ_KSTR("ExcessDataGas")> >();
+		return Base::template get<Internal::Obj::StrKey<SIMOBJ_KSTR("BlobGasUsed")> >();
+	}
+
+	// 19. ExcessBlobGas
+	typename Base::template GetRef<Internal::Obj::StrKey<SIMOBJ_KSTR("ExcessBlobGas")> >
+	get_ExcessBlobGas()
+	{
+		return Base::template get<Internal::Obj::StrKey<SIMOBJ_KSTR("ExcessBlobGas")> >();
+	}
+
+	typename Base::template GetConstRef<Internal::Obj::StrKey<SIMOBJ_KSTR("ExcessBlobGas")> >
+	get_ExcessBlobGas() const
+	{
+		return Base::template get<Internal::Obj::StrKey<SIMOBJ_KSTR("ExcessBlobGas")> >();
+	}
+
+	// 20. ParentBeaconRoot
+	typename Base::template GetRef<Internal::Obj::StrKey<SIMOBJ_KSTR("ParentBeaconRoot")> >
+	get_ParentBeaconRoot()
+	{
+		return Base::template get<Internal::Obj::StrKey<SIMOBJ_KSTR("ParentBeaconRoot")> >();
+	}
+
+	typename Base::template GetConstRef<Internal::Obj::StrKey<SIMOBJ_KSTR("ParentBeaconRoot")> >
+	get_ParentBeaconRoot() const
+	{
+		return Base::template get<Internal::Obj::StrKey<SIMOBJ_KSTR("ParentBeaconRoot")> >();
 	}
 
 }; // class EthHeaderImpl
