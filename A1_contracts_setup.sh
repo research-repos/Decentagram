@@ -26,6 +26,14 @@ make -C revoker-onchain
 echo -e "${GREEN}Revoker contracts built.${NC}"
 echo -e "${GREEN}=========================================================${NC}"
 
+echo ""
+echo ""
+echo -e "${GREEN}=========================================================${NC}"
+echo -e "${GREEN}Building End2EndLatency tests contracts...${NC}"
+make -C Revoker/tests/End2EndLatency/contracts/
+echo -e "${GREEN}End2EndLatency tests contracts built.${NC}"
+echo -e "${GREEN}=========================================================${NC}"
+
 
 echo ""
 echo ""

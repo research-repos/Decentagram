@@ -7,6 +7,7 @@
 #include <DecentEnclave/Common/DeterministicMsg.hpp>
 #include <DecentEnclave/Common/Logging.hpp>
 
+#include <DecentEnclave/Trusted/Files.hpp>
 #include <DecentEnclave/Trusted/Sgx/Random.hpp>
 
 #include <mbedTLScpp/Hash.hpp>
@@ -116,6 +117,11 @@ void GenProblemCredOnce()
 	writeConf.m_orderDict = true;
 	std::string resStr = SimpleJson::DumpStr(resJsonObj, writeConf);
 	logger.Info(resStr);
+
+	// write to file
+	auto file = DecentEnclave::Trusted::
+		WBUntrustedFile::Create("credentials.json");
+	file->WriteBytes(resStr);
 }
 
 
