@@ -1,6 +1,7 @@
 MODULES        := \
 	EnclaveRevoker \
 	KeyRevoker \
+	tests \
 	libs/PubSub \
 	libs/RA
 SOLC_VERSION   := v0.8.21
