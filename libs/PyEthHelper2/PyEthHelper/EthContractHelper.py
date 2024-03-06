@@ -142,6 +142,32 @@ def _DetermineGas(
 	return gas
 
 
+def HighFeeCalculator(
+	ethGasPrice: int,
+	ethMaxPriorityFee: int,
+) -> Tuple[int, int]:
+	# determine max priority fee
+	# priority fee is 2% of base fee
+	maxPriorFee = (ethGasPrice * 2) // 100
+	# ensure it's higher than w3.eth.max_priority_fee
+	maxPriorFee = max(maxPriorFee, ethMaxPriorityFee)
+
+	maxPriorFee = maxPriorFee * 100
+
+	return maxPriorFee, ethGasPrice + maxPriorFee
+
+
+def LowFeeCalculator(
+	ethGasPrice: int,
+	ethMaxPriorityFee: int,
+) -> Tuple[int, int]:
+	# determine max priority fee
+	# priority fee is 2% of historical fee
+	maxPriorFee = (ethMaxPriorityFee * 2) // 100
+
+	return maxPriorFee, ethGasPrice + maxPriorFee
+
+
 def DefaultFeeCalculator(
 	ethGasPrice: int,
 	ethMaxPriorityFee: int,
